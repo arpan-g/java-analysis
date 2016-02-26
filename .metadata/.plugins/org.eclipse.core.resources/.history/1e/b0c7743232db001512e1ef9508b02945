@@ -1,0 +1,61 @@
+package parser;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import models.pirEntry;
+
+public class parseMatFile {
+	private static final int PACKET_NUMBER = 6;
+	private static final int MAC_ID = 2;
+	
+public void parse(){
+	List<pirEntry> readingsList = new ArrayList<pirEntry>();
+	String path ="C:/arpan/Thesis/occupancySensor/data/week7-2016-01-25/week7/data_02_02/file.txt";
+	BufferedReader br = null;
+	try {
+		br = new BufferedReader(new FileReader(path));
+	
+	    StringBuilder sb = new StringBuilder();
+	    String line = br.readLine();
+	    while (line != null) {
+	    	pirEntry pir= new pirEntry(); 
+	    	String[] split = line.split("   ");
+	    	split[0].trim();
+	    	
+	    	int macID = getIntegerValue(split,MAC_ID);;
+	    	int packetNumber = getIntegerValue(split,PACKET_NUMBER);
+	    	int startTime = generateTime(split,3,4,5,14);
+	    	int endTime=generateTime(split,11,12,13,14);
+			pir.setMacID(macID);
+	    	pir.setPacketNumber(packetNumber);
+			pir.setStartTime(startTime);
+			pir.setEndTime(endTime);
+	    	readingsList.add(pir);
+	    	
+//	    	readingsList.add(line);
+	        line = br.readLine();
+	        
+	    }
+	    
+	}
+	catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} finally {
+	    try {
+			br.close();
+			System.out.println("done");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}
+}
+
+}

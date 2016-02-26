@@ -1,0 +1,11 @@
+package models;
+
+public class pirEntry {
+	
+	int macID;
+	int startTime;
+	int endTime;
+	int packetNumber;
+	int pirData;
+
+}

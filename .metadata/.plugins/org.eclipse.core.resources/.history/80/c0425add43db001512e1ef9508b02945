@@ -1,0 +1,27 @@
+package parseMatFile;
+
+import java.util.List;
+
+import models.pirEntry;
+import parser.ParseMatFile;
+
+public class EntryPoint {
+
+
+	public static void main(String[] args) {
+		
+		
+		// TODO Auto-generated method stub
+	ParseMatFile parse = new ParseMatFile();
+	List<pirEntry> parse2 = parse.parse();
+	
+		 
+		
+	}
+
+
+
+	
+
+
+}

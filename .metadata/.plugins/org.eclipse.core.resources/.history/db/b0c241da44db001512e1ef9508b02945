@@ -1,0 +1,41 @@
+package parseMatFile;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import models.pirEntry;
+import parser.ParseMatFile;
+
+public class EntryPoint {
+
+
+	public static void main(String[] args) {
+		
+		
+		// TODO Auto-generated method stub
+	ParseMatFile parse = new ParseMatFile();
+	List<pirEntry> pirList = parse.parse();
+	HashMap<Integer, List<pirEntry>> pirMacMap = new HashMap<>();
+	
+	for (pirEntry pirEntry : pirList) {
+		int macID = pirEntry.getMacID();
+		if(pirMacMap.containsKey(macID)){
+			pirMacMap.get(macID).add(pirEntry);
+			}else{
+				List<pirEntry>pirLists = new ArrayList<pirEntry>();
+				pirLists.add(pirEntry);
+				pirMacMap.put(macID, pirLists);
+			}
+	}
+	
+		 
+		
+	}
+
+
+
+	
+
+
+}

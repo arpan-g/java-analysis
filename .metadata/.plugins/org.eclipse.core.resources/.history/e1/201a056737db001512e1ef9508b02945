@@ -1,0 +1,31 @@
+package parseMatFile;
+import java.util.BitSet;
+
+public class EntryPoint {
+
+	private static final int PACKET_NUMBER = 6;
+	private static final int MAC_ID = 2;
+
+	public static void main(String[] args) {
+		
+		
+		// TODO Auto-generated method stub
+//	ParseMatFile parse = new ParseMatFile();
+//	parse.parse();
+		char[] value= decimal2Binary(255,255,255,255).toCharArray();
+		 
+		
+	}
+
+	private static String decimal2BinaryString(int i, int j, int k, int l) {
+		// TODO Auto-generated method stub
+		Integer dec = (i<<24|j<<16|k<<8|l);
+		
+		return Integer.toBinaryString(dec);
+		
+	}
+
+	
+
+
+}

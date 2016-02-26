@@ -1,0 +1,51 @@
+package models;
+
+public class pirEntry {
+	
+	public int getMacID() {
+		return macID;
+	}
+	public void setMacID(int macID) {
+		this.macID = macID;
+	}
+	public int getStartTime() {
+		return startTime;
+	}
+	public void setStartTime(int startTime) {
+		this.startTime = startTime;
+	}
+	public int getEndTime() {
+		return endTime;
+	}
+	public void setEndTime(int endTime) {
+		this.endTime = endTime;
+	}
+	public int getPacketNumber() {
+		return packetNumber;
+	}
+	public void setPacketNumber(int packetNumber) {
+		this.packetNumber = packetNumber;
+	}
+	public char[] getPirData() {
+		return pirData;
+	}
+	public void setPirData(char[] pirData) {
+		this.pirData = pirData;
+	}
+	
+	public Integer[] getTimeArray() {
+		return timeArray;
+	}
+	public void setTimeArray(int[] timeArray) {
+		
+		this.timeArray = timeArray;
+	}
+
+	int macID;
+	int startTime;
+	int endTime;
+	int packetNumber;
+	char[] pirData;
+	int[] timeArray;
+
+}
